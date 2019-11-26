@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/kingsleychino/Books-Library/issues"
   },
-  "homepage": "https://github.com/kingsleychino/Books-Library#readme"
+  "homepage": "https://github.com/kingsleychino/Books-Library#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "mongoose": "^5.7.12"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.1"
+  }
 }
