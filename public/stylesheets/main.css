@@ -58,3 +58,28 @@ body {
   margin: 0 10px;
   text-align: right;
 }
+
+.sign-up {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.sign-up .form-group {
+  margin: 10px 0;
+}
+
+.sign-up .form-group input {
+  padding: 10px;
+  width: 60%;
+}
+
+.sign-up .form-group .btn {
+  background: chocolate;
+  border: none;
+  color: #fff;
+}
+
+.sign-up .form-group .btn:hover {
+  background: rgb(155, 76, 20);
+}
