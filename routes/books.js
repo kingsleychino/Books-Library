@@ -4,6 +4,11 @@ const Book = require('../models/book');
 const Author = require('../models/author');
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif'];
 
+router.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 // All Books Route
 router.get('/', async (req, res) => {
   let query = Book.find();
@@ -33,7 +38,7 @@ router.get('/new', async (req, res) => {
 });
 
 // Create Book Route
-router.post('/', async (req, res) => {
+router.post('/', isLoggedIn, async (req, res) => {
   const book = new Book({
     title: req.body.title,
     author: req.body.author,
@@ -99,7 +104,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete Book Page
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isLoggedIn, async (req, res) => {
   let book;
   try {
     book = await Book.findById(req.params.id);
@@ -152,6 +157,13 @@ function saveCover(book, coverEncoded) {
     book.coverImage = new Buffer.from(cover.data, 'base64');
     book.coverImageType = cover.type;
   }
+}
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
 }
 
 module.exports = router;

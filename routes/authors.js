@@ -3,6 +3,11 @@ const router = express.Router();
 const Author = require('../models/author');
 const Book = require('../models/book');
 
+router.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 // All Authors Route
 router.get('/', async (req, res) => {
   let searchOptions = {};
@@ -26,7 +31,7 @@ router.get('/new', (req, res) => {
 });
 
 // Create Author Route
-router.post('/', async (req, res) => {
+router.post('/', isLoggedIn, async (req, res) => {
   const author = new Author({
     name: req.body.name
   });
@@ -98,5 +103,12 @@ router.delete('/:id', async (req, res) => {
     }
   }
 });
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}
 
 module.exports = router;
