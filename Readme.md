@@ -34,6 +34,9 @@ These instructions will get you a copy of the project up and running on your loc
 - Week 14 : Upgrade Ops based on Teacher's Input
 - Week 15 : Final Release
 
+## npm config
+npm config set registry http://registry.npm.taobao.org
+
 ## Author
 
 **UGWU KINGSLEY CHISOM**
