@@ -83,3 +83,7 @@ body {
 .sign-up .form-group .btn:hover {
   background: rgb(155, 76, 20);
 }
+
+em {
+  color: rgb(255, 217, 0);
+}
