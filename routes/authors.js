@@ -89,7 +89,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isLoggedIn, async (req, res) => {
   let author;
   try {
     author = await Author.findById(req.params.id);
