@@ -34,12 +34,20 @@
   align-self: flex-start;
 }
 
+.book-details-label-desc {
+  background: rgb(221, 221, 221);
+  color: black;
+  font-weight: 300;
+  padding: 0.5rem;
+}
+
 .book-details-grid {
   display: grid;
   align-content: flex-start;
   align-items: center;
   grid-gap: 1rem;
   grid-template-columns: auto auto;
+  color: black;
 }
 
 .book-details-btn-grid {

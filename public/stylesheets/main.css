@@ -16,14 +16,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: linear-gradient(
-    to right,
-    var(--color-background-dark),
-    var(--color-background-light)
-  );
+  background: rgb(221, 221, 221);
 }
 
 .container {
@@ -33,12 +31,17 @@ body {
 }
 
 .inner-container {
+  background: rgb(231, 231, 231);
   margin: 0 2rem;
+  padding: 1rem;
 }
 
 .page-header {
+  background: #001d2b;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .error-message {
@@ -60,6 +63,7 @@ body {
 }
 
 .sign-up {
+  color: #001d2b;
   margin: auto;
   max-width: 600px;
   text-align: center;

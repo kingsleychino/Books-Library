@@ -1,26 +1,28 @@
 <header>
-  <div class="nav-signs">
-    <ul>
-      <% if (!currentUser) { %>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/register">Sign Up</a></li>
-      <% } else { %>
-      <li>
-        <a href="#"
-          ><em>signed in as</em> <%= currentUser.username.toUpperCase() %></a
-        >
-      </li>
-      <li><a class="btn-sm btn-logout" href="/logout">Logout</a></li>
-      <% } %>
-    </ul>
+  <div class="container">
+    <div class="nav-signs">
+      <ul>
+        <% if (!currentUser) { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Sign Up</a></li>
+        <% } else { %>
+        <li>
+          <a href="#"
+            ><em>signed in as</em> <%= currentUser.username.toUpperCase() %></a
+          >
+        </li>
+        <li><a class="btn-sm btn-logout" href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+    <nav class="header-nav">
+      <a class="header-title" href="/">Book Library</a>
+      <ul>
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/authors/new">Add Author</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/books/new">Add Book</a></li>
+      </ul>
+    </nav>  
   </div>
-  <nav class="header-nav">
-    <a class="header-title" href="/">My Library</a>
-    <ul>
-      <li><a href="/authors">Authors</a></li>
-      <li><a href="/authors/new">Add Author</a></li>
-      <li><a href="/books">Books</a></li>
-      <li><a href="/books/new">Add Book</a></li>
-    </ul>
-  </nav>
 </header>
